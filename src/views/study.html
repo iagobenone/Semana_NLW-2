@@ -63,7 +63,13 @@
 
         <main>
 
-            {%for proffy in proffys %} <!--estrutura de repetição for // para cada um proffy irá ser impresso o teacher item na tela-->
+            {% if proffys == "" %}
+            
+                <p class="no-results">Nenhum professor encontrado com a sua pesquisa</p>
+
+                {% else %}
+
+                {%for proffy in proffys %} <!--estrutura de repetição for // para cada um proffy irá ser impresso o teacher item na tela-->
                     <article class="teacher-item">
                         <header>
                             <img 
@@ -85,7 +91,9 @@
                             </a>
                         </footer>
                     </article>
-            {%endfor %}
+                {%endfor %}
+
+            {% endif %}
             
 
         </main>
